@@ -3,7 +3,7 @@ using Zenject;
 
 namespace Screen
 {
-    public class ScreenCoordinates
+    public class ScreenCoordinates : IScreenCoordinates
     {
         public Vector3 Position { get; private set; }
 
@@ -12,5 +12,10 @@ namespace Screen
         {
             Position = Camera.main.ScreenToWorldPoint(Vector3.zero);
         }
+    }
+
+    public interface IScreenCoordinates
+    {
+        public Vector3 Position { get; }
     }
 }
