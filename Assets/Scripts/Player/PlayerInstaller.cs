@@ -17,7 +17,7 @@ namespace Game.Player
             Container.BindInterfacesAndSelfTo<MobileInput>().FromNew().AsSingle().WithArguments(_inputListenerPrefab).NonLazy();
             Container.BindInterfacesAndSelfTo<Player>().FromNew().AsSingle().WithArguments(_playerTransform).NonLazy();
             Container.BindInterfacesAndSelfTo<PlayerConfig>().FromInstance(_playerConfig).AsSingle().NonLazy();
-            Container.BindInterfacesAndSelfTo<WeaponPoint>().FromInstance(_weaponPoint).AsSingle().NonLazy();
+            ProjectContext.Instance.Container.BindInterfacesAndSelfTo<WeaponPoint>().FromInstance(_weaponPoint).AsSingle().NonLazy();
         }
     }
 }

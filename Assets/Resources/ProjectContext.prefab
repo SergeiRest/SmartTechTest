@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletConfig: {fileID: 11400000, guid: c49eb67cdade38344b917e843b0c2b3b, type: 2}
+  _laserConfig: {fileID: 11400000, guid: 1f378fbf31b4a214b9abbb5551565206, type: 2}
 --- !u!114 &-6519202036442014425
 MonoBehaviour:
   m_ObjectHideFlags: 0
