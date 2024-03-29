@@ -15,7 +15,7 @@ namespace Game.ScoreCounter
         private void Construct(ScoreCounter scoreCounter)
         {
             _scoreCounter = scoreCounter;
-            _scoreCounter.Increased += UpdateView;
+            _scoreCounter.KillCountChanged += UpdateView;
         }
 
         private void UpdateView(int value)
@@ -25,7 +25,7 @@ namespace Game.ScoreCounter
 
         private void OnDestroy()
         {
-            _scoreCounter.Increased -= UpdateView;
+            _scoreCounter.KillCountChanged -= UpdateView;
         }
     }
 }

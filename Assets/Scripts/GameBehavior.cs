@@ -10,7 +10,8 @@ namespace Game
 
         public void Restart()
         {
-            
+            _scoreCounter.Clear();
+            _gameGrid.Revive();
         }
 
         public void LevelComplete()
