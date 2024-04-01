@@ -13,19 +13,25 @@ namespace Game.Bullet
         [Inject] private BulletConfigContainer _bulletConfig;
         [Inject] DropBulletCreator _creator;
 
+        private float dropChance = 2;
+
         public void Calculate()
         {
-            var selected = _bulletConfig.GetRandom<BulletConfig>();
-            Sprite sprite = selected.ShowSprite;
-            Debug.Log(selected.GetType());
+            float random = Random.Range(0, 10);
+            if (random < dropChance)
+            {
+                var selected = _bulletConfig.GetRandom<BulletConfig>();
+                Sprite sprite = selected.ShowSprite;
+                Debug.Log(selected.GetType());
 
-            if (selected.GetType() == typeof(LaserBulletConfig))
-            {
-                _creator.Create(new LaserWeapon(), sprite);
-            }
-            else if (selected.GetType() == typeof(ThirdBulletConfig))
-            {
-                _creator.Create(new ThirdWeapon(), sprite);
+                if (selected.GetType() == typeof(LaserBulletConfig))
+                {
+                    _creator.Create(new LaserWeapon(), sprite);
+                }
+                else if (selected.GetType() == typeof(ThirdBulletConfig))
+                {
+                    _creator.Create(new ThirdWeapon(), sprite);
+                }
             }
         }
     }
