@@ -9,10 +9,12 @@ namespace Game.Player.Movement
     {
         private IPlayerInput _playerInput;
         private Transform _moveable;
+        private Vector3 _defaultPosition;
 
         public Mover(Transform moveable)
         {
             _moveable = moveable;
+            _defaultPosition = moveable.position;
         }
 
         [Inject]
@@ -30,6 +32,8 @@ namespace Game.Player.Movement
 
             _moveable.transform.position = position;
         }
+
+        public void SetDefault() => _moveable.position = _defaultPosition;
 
         public void Dispose()
         {

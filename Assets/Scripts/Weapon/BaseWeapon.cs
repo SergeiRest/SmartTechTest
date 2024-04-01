@@ -6,9 +6,9 @@ namespace Game.Weapon
     public class BaseWeapon : Weapon
     {
         [Inject]
-        private void Construct(BulletConfig bulletConfig)
+        private void Construct(BulletConfigContainer configs)
         {
-            Bullet = bulletConfig.BulletPrefab;
+            Bullet = configs.DefaultConfig.BulletPrefab;
         }
     }
 }

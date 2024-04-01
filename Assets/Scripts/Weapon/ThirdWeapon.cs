@@ -3,12 +3,12 @@ using Zenject;
 
 namespace Game.Weapon
 {
-    public class LaserWeapon : Weapon
+    public class ThirdWeapon : Weapon
     {
         [Inject]
         private void Construct(BulletConfigContainer configs)
         {
-            Bullet = configs.Get<LaserBulletConfig>().BulletPrefab;
+            Bullet = configs.Get<ThirdBulletConfig>().BulletPrefab;
         }
     }
 }

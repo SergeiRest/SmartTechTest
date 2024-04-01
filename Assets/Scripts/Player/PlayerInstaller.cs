@@ -14,9 +14,9 @@ namespace Game.Player
 
         public override void InstallBindings()
         {
-            Container.BindInterfacesAndSelfTo<MobileInput>().FromNew().AsSingle().WithArguments(_inputListenerPrefab).NonLazy();
-            Container.BindInterfacesAndSelfTo<Player>().FromNew().AsSingle().WithArguments(_playerTransform).NonLazy();
-            Container.BindInterfacesAndSelfTo<PlayerConfig>().FromInstance(_playerConfig).AsSingle().NonLazy();
+            ProjectContext.Instance.Container.BindInterfacesAndSelfTo<MobileInput>().FromNew().AsSingle().WithArguments(_inputListenerPrefab).NonLazy();
+            ProjectContext.Instance.Container.BindInterfacesAndSelfTo<Player>().FromNew().AsSingle().WithArguments(_playerTransform).NonLazy();
+            ProjectContext.Instance.Container.BindInterfacesAndSelfTo<PlayerConfig>().FromInstance(_playerConfig).AsSingle().NonLazy();
             ProjectContext.Instance.Container.BindInterfacesAndSelfTo<WeaponPoint>().FromInstance(_weaponPoint).AsSingle().NonLazy();
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using Game.Bullet;
 using UnityEngine;
 using Zenject;
 
@@ -6,6 +7,7 @@ namespace Game.Enemy
 {
     public class EnemyTemplate : MonoBehaviour
     {
+        [Inject] private DropBulletCalculator _bulletCalculator;
         private EnemyTrigger _trigger;
 
         [Inject]
@@ -18,6 +20,7 @@ namespace Game.Enemy
 
         private void OnTriggerEnter2D(Collider2D col)
         {
+            _bulletCalculator.Calculate();
             if (col.TryGetComponent(out Bullet.Bullet bullet))
             {
                 bullet.Dispose();

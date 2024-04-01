@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a51e9ccb9e5d45079cb0352c0ae19da5, type: 3}
-  m_Name: LaserBullet
+  m_Script: {fileID: 11500000, guid: 12f0b4e3f15a4ccb9959725154994c85, type: 3}
+  m_Name: ThirdBullet
   m_EditorClassIdentifier: 
-  ShowSprite: {fileID: 21300000, guid: 4a7fe621ed73a2442a6fd1d809fbadea, type: 3}
-  BulletPrefab: {fileID: 7655472289111026021, guid: 1a5adba2e8135fc4eb02e230f35204d0, type: 3}
+  ShowSprite: {fileID: 21300000, guid: d4fa10aee4522164bb58570a396133bf, type: 3}
+  BulletPrefab: {fileID: 8213392751314713205, guid: 135f23232c5c0574c8be97f3c22dea57, type: 3}
   Damage: 0

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a627189c74b643c6a5d32a95bbd1cbda, type: 3}
   m_Name: BulletConfig
   m_EditorClassIdentifier: 
+  ShowSprite: {fileID: 21300000, guid: c2ea0a925fbf0894dbef65107069d7e8, type: 3}
   BulletPrefab: {fileID: 7744243018835314823, guid: 22ebc5d19a1e99448aaa38eb61dce06c, type: 3}
   Damage: 0

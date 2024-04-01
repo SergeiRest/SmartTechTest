@@ -6,7 +6,7 @@ namespace Game.Weapon
     {
         public override void InstallBindings()
         {
-            Container.BindInterfacesAndSelfTo<WeaponChanger>().FromNew().AsSingle().NonLazy();
+            ProjectContext.Instance.Container.BindInterfacesAndSelfTo<WeaponChanger>().FromNew().AsSingle().NonLazy();
         }
     }
 }

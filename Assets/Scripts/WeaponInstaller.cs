@@ -8,12 +8,24 @@ namespace Game
     {
         [SerializeField] private BulletConfig _bulletConfig;
         [SerializeField] private LaserBulletConfig _laserConfig;
+        [SerializeField] private ThirdBulletConfig _thirdBullet;
+        [SerializeField] private DropBulletTemplate _bulletTemplate;
         
         public override void InstallBindings()
         {
+            Container.BindInterfacesAndSelfTo<DropBulletTemplate>().FromInstance(_bulletTemplate).AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<BulletFactory>().FromNew().AsSingle().NonLazy();
-            Container.BindInterfacesAndSelfTo<BulletConfig>().FromInstance(_bulletConfig).AsSingle().NonLazy();
-            Container.BindInterfacesAndSelfTo<LaserBulletConfig>().FromInstance(_laserConfig).AsSingle().NonLazy();
+
+            BulletConfigContainer configs = new BulletConfigContainer();
+
+            Container.BindInterfacesAndSelfTo<BulletConfigContainer>().FromInstance(configs).AsSingle().NonLazy();
+
+            configs.DefaultConfig = _bulletConfig;
+            configs.Add(_laserConfig);
+            configs.Add(_thirdBullet);
+
+            Container.BindInterfacesAndSelfTo<DropBulletCalculator>().FromNew().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<DropBulletCreator>().FromNew().AsSingle().NonLazy();
         }
     }
 }

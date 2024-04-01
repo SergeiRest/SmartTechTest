@@ -7,7 +7,7 @@ namespace Game
     {
         public override void InstallBindings()
         {
-            ProjectContext.Instance.Container.Bind<IScreenCoordinates>().To<ScreenCoordinates>().FromNew().AsSingle().NonLazy();
+            Container.Bind<IScreenCoordinates>().To<ScreenCoordinates>().FromNew().AsSingle().NonLazy();
         }
     }
 }

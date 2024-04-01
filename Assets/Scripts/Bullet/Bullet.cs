@@ -9,6 +9,8 @@ namespace Game.Bullet
     public class Bullet : MonoBehaviour, IDisposable
     {
         private BulletMover _mover;
+
+        public Action<Bullet> Kill;
         
         [Inject]
         private void Construct(DiContainer diContainer)
@@ -23,6 +25,7 @@ namespace Game.Bullet
             _mover.Dispose();
             
             Destroy(gameObject);
+            Kill?.Invoke(this);
         }
     }
 

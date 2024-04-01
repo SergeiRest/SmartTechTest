@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7321729741841463760}
   - component: {fileID: -6519202036442014425}
   - component: {fileID: 4955753366947671825}
+  - component: {fileID: 5640480717612691642}
   m_Layer: 0
   m_Name: ProjectContext
   m_TagString: Untagged
@@ -54,6 +55,7 @@ MonoBehaviour:
   - {fileID: 7321729741841463760}
   - {fileID: -6519202036442014425}
   - {fileID: 4955753366947671825}
+  - {fileID: 5640480717612691642}
   _installerPrefabs: []
   _parentNewObjectsUnderContext: 1
   _editorReflectionBakingCoverageMode: 0
@@ -95,6 +97,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletConfig: {fileID: 11400000, guid: c49eb67cdade38344b917e843b0c2b3b, type: 2}
   _laserConfig: {fileID: 11400000, guid: 1f378fbf31b4a214b9abbb5551565206, type: 2}
+  _thirdBullet: {fileID: 11400000, guid: da304ee72630c4446a8347ef05b53977, type: 2}
+  _bulletTemplate: {fileID: 2039238074632551577, guid: cfce0078cbbef914db91822dd1358f18, type: 3}
 --- !u!114 &-6519202036442014425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,5 +121,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bcdbb61a7b47454fb90d912c3f3befa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5640480717612691642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5951406610480098572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5db10dc442374e50a44569354b4422e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

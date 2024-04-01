@@ -31,7 +31,7 @@ namespace Game.Player
             diContainer.Inject(_mover);
 
             _attackInterval = config.AttackInterval;
-            SetWeapon<BaseWeapon>();
+            SetWeapon(new BaseWeapon());
         }
 
         private void TryShoot()
@@ -42,16 +42,23 @@ namespace Game.Player
             });
         }
 
+        public void SetDefault()
+        {
+            _weapon.Clear();
+            SetWeapon(new BaseWeapon());
+            _mover.SetDefault();
+        }
+
         public void Dispose()
         {
             _mover?.Dispose();
             _shotDisposable?.Dispose();
         }
 
-        public void SetWeapon<T>() where T : Weapon.Weapon, new()
+        public void SetWeapon<T>(T weapon) where T : Weapon.Weapon
         {
             _shotDisposable?.Dispose();
-            _weapon = new T();
+            _weapon = weapon;
             _diContainer.Inject(_weapon);
             TryShoot();
         }
